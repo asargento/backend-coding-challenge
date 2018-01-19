@@ -1,0 +1,21 @@
+# Custom config
+dateFormat: dd/mm/yyyy
+vatTax: 0.20
+
+# Dropwizard config
+database:
+  driverClass: org.h2.Driver
+  user: sa
+  password: sa
+  url: "jdbc:h2:./target/test-db"
+  properties:
+    hibernate.dialect: org.hibernate.dialect.H2Dialect
+    hibernate.hbm2ddl.auto: validate
+server:
+  applicationConnectors:
+    - type: http
+      port: 8085
+logging:
+  level: INFO
+  loggers:
+    engagetech: DEBUG

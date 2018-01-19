@@ -45,6 +45,11 @@ app.controller("ctrlExpenses", ["$rootScope", "$scope", "config", "restalchemy",
 		$scope.newExpense = {};
 	};
 
+    $scope.calculateVAT = function(amount) {
+        var vat = (amount - amount / 1.2).toFixed(2);
+        return isNaN(vat) ? null : vat;
+    };
+    
 	// Initialise scope variables
 	loadExpenses();
 	$scope.clearExpense();
